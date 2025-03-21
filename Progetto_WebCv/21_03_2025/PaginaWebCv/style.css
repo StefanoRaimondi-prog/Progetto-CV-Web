@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --text-color: #f4f4f4;
+  --accent-color: #00ffae;
+  --accent-glow: rgba(0, 255, 174, 0.6);
+  --button-bg: rgba(255, 255, 255, 0.1);
+  --button-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: 12px;
+  --max-width: 960px;
+  --transition-speed: 0.35s;
+}
+
+/* --- BODY --- */
+body {
+  background-image: url('https://img.freepik.com/vettori-premium/sfondo-di-trama-in-fibra-di-carbonio_107708-13.jpg?w=826');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* --- OVERLAY --- */
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- HEADER --- */
+header {
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 12px var(--accent-glow);
+  animation: fadeInDown 1s ease-out;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-top: 0.6rem;
+  animation: fadeInDown 1.2s ease-out;
+}
+
+/* --- MAIN --- */
+main {
+  max-width: var(--max-width);
+  width: 100%;
+  padding: 2rem 1rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* --- BOTTONI --- */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(var(--glass-blur));
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 0 15px rgba(0, 255, 174, 0.1);
+}
+
+.button:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #bbb;
+  border-top: 1px solid #333;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* --- ANIMAZIONI --- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 90%;
+    justify-content: center;
+  }
+}
